@@ -1,0 +1,11 @@
+{
+  "name": "blizzard",
+  "version": "1.0.0",
+  "description": "project to practice frontend",
+  "main": "index.js",
+  "author": "Rafael Martins",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
