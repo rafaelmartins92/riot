@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const autoprefixer = require("gulp-autoprefixer");
 const browserSync = require("browser-sync").create();
+const concat = require("gulp-concat");
 
 function compilaSass() {
   return gulp
@@ -17,7 +18,16 @@ function compilaSass() {
     .pipe(browserSync.stream());
 }
 
-gulp.task("default", compilaSass);
+gulp.task("sass", compilaSass);
+
+function compilaJs() {
+  return gulp
+    .src("javascript/scripts/*.js")
+    .pipe(concat("index.js"))
+    .pipe(gulp.dest("javascript/"));
+}
+
+gulp.task("javascript", compilaJs);
 
 function browser() {
   browserSync.init({
@@ -32,8 +42,12 @@ gulp.task("browser-sync", browser);
 function watch() {
   gulp.watch("scss/*.scss", compilaSass);
   gulp.watch("*.html").on("change", browserSync.reload);
+  gulp.watch("javascript/scripts/*.js", compilaJs);
 }
 
 gulp.task("watch", watch);
 
-gulp.task("default", gulp.parallel("watch", "browser-sync"));
+gulp.task(
+  "default",
+  gulp.parallel("watch", "browser-sync", "sass", "javascript")
+);
