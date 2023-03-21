@@ -16,3 +16,9 @@ function compilaSass() {
 }
 
 gulp.task("default", compilaSass);
+
+function watch() {
+  gulp.watch("scss/*.scss", compilaSass);
+}
+
+gulp.task("default", watch);
