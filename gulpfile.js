@@ -22,6 +22,16 @@ function compilaSass() {
 
 gulp.task("sass", compilaSass);
 
+function pluginsCss() {
+  return gulp
+    .src(["./css/libs/*.css"])
+    .pipe(concat("plugins.css"))
+    .pipe(gulp.dest("css/"))
+    .pipe(browserSync.stream());
+}
+
+gulp.task("pluginscss", pluginsCss);
+
 function compilaJs() {
   return gulp
     .src("javascript/scripts/*.js")
@@ -38,6 +48,16 @@ function compilaJs() {
 
 gulp.task("javascript", compilaJs);
 
+function pluginsJs() {
+  return gulp
+    .src(["./javascript/libs/*.js"])
+    .pipe(concat("plugins.js"))
+    .pipe(gulp.dest("javascript/"))
+    .pipe(browserSync.stream());
+}
+
+gulp.task("pluginsjs", pluginsJs);
+
 function browser() {
   browserSync.init({
     server: {
@@ -50,13 +70,22 @@ gulp.task("browser-sync", browser);
 
 function watch() {
   gulp.watch("scss/*.scss", compilaSass);
+  gulp.watch("css/libs/*.css", pluginsCss);
   gulp.watch("*.html").on("change", browserSync.reload);
   gulp.watch("javascript/scripts/*.js", compilaJs);
+  gulp.watch("javascript/libs/*.js", pluginsJs);
 }
 
 gulp.task("watch", watch);
 
 gulp.task(
   "default",
-  gulp.parallel("watch", "browser-sync", "sass", "javascript")
+  gulp.parallel(
+    "watch",
+    "browser-sync",
+    "sass",
+    "javascript",
+    "pluginsjs",
+    "pluginscss"
+  )
 );
