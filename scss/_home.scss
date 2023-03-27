@@ -170,3 +170,135 @@
     }
   }
 }
+
+.s-games {
+  padding: 8.3rem 0 11rem;
+  .top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 7.8rem;
+  }
+
+  .left-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 37rem;
+
+    span {
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      color: $neutral-800;
+      margin-top: 1.1rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 3.2rem;
+      line-height: 110.2%;
+      color: $white;
+      width: 100%;
+      max-width: 17.5rem;
+    }
+  }
+
+  .right-top {
+    width: 100%;
+    max-width: 75.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        &:not(:first-child) {
+          margin-left: 2.4rem;
+        }
+
+        a {
+          img {
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s;
+          }
+
+          &.active,
+          &:hover {
+            img {
+              filter: none;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-all-games {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      text-align: center;
+      color: $primary-default;
+
+      img {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .tab-games-content {
+    .tab-pane-games {
+      display: none;
+
+      &.active {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 47px 32px;
+        animation: fadeUp 1s forwards;
+      }
+
+      .card-all-games {
+        width: 100%;
+        height: 38.4rem;
+        max-width: 28rem;
+        border: 1.6125px solid $neutral-900;
+        border-radius: 4.3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          display: flex;
+          align-items: center;
+          margin-top: 3.4rem;
+          font-weight: 600;
+          font-size: 1.72rem;
+          line-height: 2.6rem;
+          color: $white;
+
+          img {
+            margin-right: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
