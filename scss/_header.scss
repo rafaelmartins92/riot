@@ -29,9 +29,13 @@ header {
         width: 4.3rem;
         border-top: 2px solid $primary-default;
       }
+
+      &:hover {
+        filter: brightness(50%) sepia(100) saturate(100) hue-rotate(25deg);
+      }
     }
     nav {
-      margin-left: 11.2rem;
+      margin-left: 7rem;
 
       ul {
         display: flex;

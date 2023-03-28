@@ -1,5 +1,5 @@
 const slideThumbnail = new Swiper(".slide-thumbnail", {
-  slidesPerView: 5,
+  slidesPerView: 6,
   direction: "vertical",
   spaceBetween: 20,
   watchSlidesProgress: true,
@@ -11,7 +11,7 @@ const slideHero = new Swiper(".slide-principal", {
     swiper: slideThumbnail,
   },
   autoplay: {
-    delay: 5000,
+    delay: 6000,
     disabledOnInteraction: false,
   },
 });
