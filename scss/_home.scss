@@ -51,7 +51,7 @@
             line-height: 110.2%;
             color: $white;
             margin-bottom: 1.6rem;
-            text-shadow: -4px 8px 4px rgba(0,0,0,0.3);
+            text-shadow: -4px 8px 4px rgba(0, 0, 0, 0.3);
           }
 
           p {
@@ -313,7 +313,8 @@
 .s-download {
   width: 100%;
   height: 850px;
-  background: url("../assets/imgs/backgrounds/bg-section-download.png") center center no-repeat;
+  background: url("../assets/imgs/backgrounds/bg-section-download.png") center
+    center no-repeat;
   background-size: cover;
   overflow: hidden;
 
@@ -419,6 +420,176 @@
       right: 5.3rem;
       bottom: -4.2rem;
       animation: float 6s ease-in-out infinite;
+    }
+  }
+}
+
+.show-modal {
+  .modal {
+    opacity: 1;
+    pointer-events: all;
+
+    .box {
+      transform: translateY(0);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black-opacity-1;
+  }
+
+  .box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 69.6rem;
+    height: 60rem;
+    background: url("../assets/imgs/backgrounds/bg-modal-login.png") no-repeat
+      center center $neutral-100;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(50px);
+    transition: transform .3s;
+
+    .close {
+      position: absolute;
+      top: 2.4rem;
+      right: 2.4rem;
+      transition: transform .3s;
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
+
+    .logo {
+      margin-bottom: 4rem;
+      width: 16.6rem;
+    }
+
+    form {
+      width: 100%;
+      max-width: 42.6rem;
+
+      .form-group {
+        margin-bottom: 1.6rem;
+
+        &:last-child {
+          margin-bottom: 2.4rem;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+          width: 100%;
+          height: 4.8rem;
+          border-radius: 4px;
+          border: none;
+          padding: 0 1.6rem;
+          font-weight: 500;
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+          color: $neutral-700;
+
+          &::placeholder {
+            opacity: 0.6;
+          }
+        }
+
+        button {
+          width: 100%;
+          justify-content: center;
+          line-height: 5.2rem;
+          font-weight: 600;
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .others-conect {
+      margin-bottom: 3.5rem;
+
+      p {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        text-align: center;
+        color: $white;
+        margin-bottom: 1.6rem;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          &:not(:first-child) {
+            margin-left: 1.6rem;
+          }
+
+          button {
+            width: 4.8rem;
+            height: 4.8rem;
+            background-color: $white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    .message-user {
+      p {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $white;
+        margin-bottom: 1.6rem;
+        text-align: center;
+
+        a {
+          display: inline-block;
+        }
+      }
+
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration-line: underline;
+        color: $primary-default;
+        text-align: center;
+        display: block;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $white;
+        }
+      }
     }
   }
 }
