@@ -1,5 +1,6 @@
 .s-hero {
   position: relative;
+  z-index: 2;
 
   .slide-principal {
     width: 100%;
@@ -263,6 +264,11 @@
       line-height: 2.4rem;
       text-align: center;
       color: $white;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       img {
         margin-right: 1rem;
@@ -291,6 +297,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.8;
+        }
 
         span {
           display: flex;
@@ -447,7 +458,7 @@
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 
   .overlay {
     position: fixed;
@@ -473,13 +484,13 @@
     align-items: center;
     justify-content: center;
     transform: translateY(50px);
-    transition: transform .3s;
+    transition: transform 0.3s;
 
     .close {
       position: absolute;
       top: 2.4rem;
       right: 2.4rem;
-      transition: transform .3s;
+      transition: transform 0.3s;
 
       &:hover {
         transform: rotate(90deg);
