@@ -9,30 +9,26 @@
     .swiper-wrapper {
       .swiper-slide {
         padding-top: 20.7rem;
+        background-position: top center;
+        background-size: cover;
 
         &.slide-01 {
-          background: url("../assets/imgs/banners/bg-banner1.jpg") center center;
-          background-size: cover;
+          background-image: url("../assets/imgs/banners/bg-banner1.jpg");
         }
         &.slide-02 {
-          background: url("../assets/imgs/banners/bg-banner2.jpg") center center;
-          background-size: cover;
+          background-image: url("../assets/imgs/banners/bg-banner2.jpg");
         }
         &.slide-03 {
-          background: url("../assets/imgs/banners/bg-banner3.jpg") center center;
-          background-size: cover;
+          background-image: url("../assets/imgs/banners/bg-banner3.jpg");
         }
         &.slide-04 {
-          background: url("../assets/imgs/banners/bg-banner4.jpg") center center;
-          background-size: cover;
+          background-image: url("../assets/imgs/banners/bg-banner4.jpg");
         }
         &.slide-05 {
-          background: url("../assets/imgs/banners/bg-banner5.jpg") center center;
-          background-size: cover;
+          background-image: url("../assets/imgs/banners/bg-banner5.jpg");
         }
         &.slide-06 {
-          background: url("../assets/imgs/banners/bg-banner6.jpg") center center;
-          background-size: cover;
+          background-image: url("../assets/imgs/banners/bg-banner6.jpg");
         }
 
         .container {
@@ -44,7 +40,7 @@
         .left-content {
           margin-left: 19.3rem;
           width: 100%;
-          max-width: 47rem;
+          // max-width: 47rem;
 
           h2 {
             font-weight: 700;
@@ -53,6 +49,7 @@
             color: $white;
             margin-bottom: 1.6rem;
             text-shadow: -4px 8px 4px rgba(0, 0, 0, 0.3);
+            max-width: 47rem;
           }
 
           p {
@@ -62,6 +59,7 @@
             color: $white;
             margin-bottom: 3.2rem;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            max-width: 46rem;
           }
 
           button {
@@ -165,7 +163,7 @@
   .slide-thumbnail {
     position: absolute;
     top: 21.6rem;
-    left: 8%;
+    left: 16%;
     z-index: 2;
     height: 38.8rem;
 
@@ -188,10 +186,112 @@
       }
     }
   }
+
+  @media (max-width: 1440px) {
+    .slide-principal {
+      .swiper-wrapper {
+        .swiper-slide {
+          background-position: center center;
+        }
+      }
+    }
+
+    .slide-thumbnail {
+      left: 8%;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .slide-thumbnail {
+      left: 1%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .slide-principal {
+      .swiper-wrapper {
+        .swiper-slide {
+          .left-content {
+            margin-left: 0;
+            max-width: 46rem;
+
+            h2 {
+              font-size: 6.4rem;
+            }
+          }
+
+          .right-content {
+            position: absolute;
+            right: 0;
+
+            .logo {
+              margin-top: -5.3rem;
+              margin-bottom: 21rem;
+            }
+          }
+        }
+      }
+    }
+
+    .slide-thumbnail {
+      left: 1.5rem;
+      top: initial;
+      bottom: 6rem;
+      height: 4.8rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .slide-principal {
+      height: 62.2rem;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          padding-top: 13.1rem;
+
+          &.slide-01 {
+            background-position-x: 38%;
+          }
+          &.slide-02 {
+            background-position-x: 36%;
+          }
+          &.slide-03 {
+            background-position-x: 45%;
+          }
+          &.slide-04 {
+            background-position-x: 48%;
+          }
+          &.slide-05 {
+            background-position-x: 36%;
+          }
+          &.slide-06 {
+            background-position-x: 65%;
+          }
+
+          .left-content {
+            max-width: 28.3rem;
+
+            h2 {
+              font-size: 4rem;
+            }
+
+            p {
+              font-size: 1.6rem;
+            }
+          }
+
+          .right-content {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 .s-games {
   padding: 8.3rem 0 11rem;
+
   .top {
     display: flex;
     align-items: flex-end;
@@ -308,12 +408,92 @@
           align-items: center;
           margin-top: 3.4rem;
           font-weight: 600;
-          font-size: 1.72rem;
+          font-size: 1.6rem;
           line-height: 2.6rem;
           color: $white;
 
           img {
             margin-right: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .right-top {
+      max-width: 58.3rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .top {
+      margin-bottom: 5.8rem;
+
+      .left-top {
+        max-width: fit-content;
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .right-top {
+      max-width: 50rem;
+    }
+
+    .tab-games-content {
+      .tab-pane-games {
+        &.active {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 560px) {
+    padding: 6rem 0;
+
+    .top {
+      margin-bottom: 5.1rem;
+
+      .left-top {
+        h2 {
+          font-size: 2.8rem;
+        }
+      }
+
+      .right-top {
+        justify-content: flex-end;
+
+        ul {
+          display: none;
+        }
+
+        .btn-all-games {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    .tab-games-content {
+      .tab-pane-games {
+        &.active {
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 1.6rem 2.4rem;
+        }
+
+        .card-all-games {
+          height: 100%;
+
+          img {
+            max-width: 10rem;
+          }
+
+          span {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
           }
         }
       }

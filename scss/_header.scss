@@ -93,6 +93,41 @@ header {
         margin-left: 1.6rem;
       }
     }
+
+    .btn-mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .left-container {
+      nav {
+        display: none;
+      }
+    }
+
+    .right-container {
+      .btn-mobile {
+        display: block;
+        margin-left: 8rem;
+      }
+    }
+  }
+
+  @media (max-width: 560px) {
+    height: 8rem;
+
+    .left-container {
+      .logo {
+        max-width: 7rem;
+      }
+    }
+
+    .right-container {
+      .btn {
+        display: none;
+      }
+    }
   }
 }
 
