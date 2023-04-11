@@ -613,6 +613,48 @@
       animation: float 6s ease-in-out infinite;
     }
   }
+
+  @media (max-width: 991px) {
+    .text-left {
+      max-width: 29.9rem;
+
+      h2 {
+        font-size: 3.2rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .image {
+      right: -35rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    height: auto;
+    padding-bottom: 5rem;
+
+    .text-left {
+      padding-top: 6.3rem;
+      margin-bottom: 4rem;
+
+      h2 {
+        font-size: 2.8rem;
+      }
+    }
+
+    .image {
+      position: relative;
+      top: 0;
+      right: 0;
+      height: 27rem;
+
+      .img-sm {
+        bottom: 0;
+        right: 0;
+        max-width: 27.6rem;
+      }
+    }
+  }
 }
 
 .show-modal {
