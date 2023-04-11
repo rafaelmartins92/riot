@@ -457,22 +457,22 @@
 
     .top {
       margin-bottom: 5.1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
 
       .left-top {
         h2 {
           font-size: 2.8rem;
+          max-width: 100%;
         }
       }
 
       .right-top {
-        justify-content: flex-end;
-
-        ul {
-          display: none;
-        }
+        justify-content: flex-start;
 
         .btn-all-games {
-          font-size: 1.4rem;
+          display: none;
         }
       }
     }
@@ -487,13 +487,13 @@
         .card-all-games {
           height: 100%;
 
-          img {
-            max-width: 10rem;
-          }
-
           span {
             font-size: 1.2rem;
             margin-top: 1.5rem;
+
+            img {
+              display: none;
+            }
           }
         }
       }
