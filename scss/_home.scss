@@ -880,3 +880,21 @@
     }
   }
 }
+
+.bg-loader {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: linear-gradient(225deg, $primary-dark 0%, $primary-darkest 100%);
+}

@@ -20,3 +20,22 @@
     transform: translateY(0px);
   }
 }
+
+.logo-riot {
+  fill: transparent;
+
+  animation: logo-riot 2s ease infinite alternate;
+}
+
+@keyframes logo-riot {
+  0% {
+    fill: transparent;
+  }
+  25% {
+    fill: transparent;
+  }
+  60%,
+  100% {
+    fill: $white;
+  }
+}
