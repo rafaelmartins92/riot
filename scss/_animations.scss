@@ -21,21 +21,20 @@
   }
 }
 
-.logo-riot {
-  fill: transparent;
-
-  animation: logo-riot 2s ease infinite alternate;
-}
-
 @keyframes logo-riot {
   0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
     fill: transparent;
   }
   25% {
+    stroke-width: 1;
+    stroke-dasharray: 100 0;
     fill: transparent;
   }
   60%,
   100% {
+    stroke-width: 0;
     fill: $white;
   }
 }

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ".bg-loader",
       1,
       { width: "100%" },
-      { width: "0%", delay: 2, ease: Expo.easeInOut }
+      { width: "0%", delay: 3, ease: Expo.easeInOut }
     )
     .fromTo(
       ".gsap-body",

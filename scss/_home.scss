@@ -226,7 +226,7 @@
       .slide-progress-bar {
         &:after {
           width: 100%;
-          transition: width 6s linear;
+          transition: width 5s linear;
         }
       }
     }
@@ -897,4 +897,11 @@
   overflow: hidden;
 
   background: linear-gradient(225deg, $primary-dark 0%, $primary-darkest 100%);
+
+  .logo-riot {
+    stroke: $white;
+    fill: transparent;
+
+    animation: logo-riot 10s ease infinite alternate;
+  }
 }
